@@ -1,0 +1,4 @@
+<!-- Using the @Input/@Output pattern for passing data requires -->
+<!-- Splitting into [value] and (input), rather than having a simple [(ngModel)] -->
+<input type="text" [value]="name" (input)="onValueChange($event)">
+<p>internal value: {{name}}</p>

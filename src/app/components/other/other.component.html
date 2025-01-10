@@ -1,0 +1,49 @@
+@let flatList = list().flat();
+
+{{flatList}}
+@if (flatList.length > list().length) {
+  variables in html are neat.
+}
+
+@if (flag) {
+  flag on text
+} @else if (list().length > 2) {
+  flag off text option 1
+} @else {
+  flag off text option 2
+}
+
+@switch(true) {
+  @case(flag && list().length <= 2) {
+    flag on text
+  }
+  @case(!flag && list().length > 2) {
+    flag off text option 1
+  }
+  @case(!flag && list().length <= 2) {
+    flag off text option 2
+  }
+}
+
+<!-- track provides a key for each item, so DOM updates can only change the different data
+instead of rebuilding the entire array.
+track $index can be used for static arrays.
+a different unique identifier should be used for arrays that items would be added to or removed from.
+-->
+@for (item of list(); track $index) {
+  <div>{{item}}</div>
+  @if ($even) { <!-- can also use $count, $index, $first, $last and $odd -->
+    ...is an even item!
+  }
+}
+
+
+@defer (on viewport) {
+  <!-- elements that show based on a condition -->
+} @placeholder {
+  <!-- elements that show immediately -->
+} @loading {
+  <!-- elements that show when the condition is met, but the main elements aren't rendered yet -->
+} @error {
+  <!-- elements that show when the main elements couldn't be rendered -->
+}
