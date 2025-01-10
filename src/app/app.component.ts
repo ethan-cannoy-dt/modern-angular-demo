@@ -1,12 +1,11 @@
-import {Component, model, signal} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, signal} from '@angular/core';
 import {OldInputsComponent} from './components/old-inputs/old-inputs.component';
 import {NewInputsComponent} from './components/new-inputs/new-inputs.component';
 import {NewModelsComponent} from './components/new-models/new-models.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, OldInputsComponent, NewInputsComponent, NewModelsComponent],
+  imports: [OldInputsComponent, NewInputsComponent, NewModelsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
